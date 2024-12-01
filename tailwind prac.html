@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind CSS Responsive</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Navigation Bar -->
+  <nav class="bg-purple-900 text-white fixed w-full z-10 shadow">
+    <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+      <div class="font-bold text-lg">TAILWIND PRACTICE</div>
+      <div class="hidden md:flex space-x-4">
+        <a href="#slider" class="hover:underline">Home</a>
+        <a href="#services" class="hover:underline">Services</a>
+        <a href="#cta" class="hover:underline">Call to Action</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+      </div>
+      <!-- Mobile Menu -->
+      <button id="menu-toggle" class="md:hidden">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-purple-800 text-white">
+      <a href="#slider" class="block px-4 py-2 hover:bg-purple-700">Home</a>
+      <a href="#services" class="block px-4 py-2 hover:bg-purple-700">Services</a>
+      <a href="#cta" class="block px-4 py-2 hover:bg-purple-700">Call to Action</a>
+      <a href="#contact" class="block px-4 py-2 hover:bg-purple-700">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Slider Section -->
+  <section id="slider" class="h-screen bg-cover bg-center flex items-center justify-center" style="background-image: url('node_modules/images.jpg');">
+    <div class="text-center px-4">
+      <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold text-purple-900">Welcome to Our Website</h1>
+      <p class="mt-4 text-sm sm:text-lg text-black">Explore our amazing services and solutions.</p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 bg-gray-100">
+    <div class="container mx-auto text-center px-4">
+      <h2 class="text-3xl font-bold mb-8">Our Services</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div class="p-6 bg-white shadow-md rounded">
+          <h3 class="text-xl font-semibold">Service 1</h3>
+          <p class="mt-4 text-gray-600">Description of service 1.</p>
+        </div>
+        <div class="p-6 bg-white shadow-md rounded">
+          <h3 class="text-xl font-semibold">Service 2</h3>
+          <p class="mt-4 text-gray-600">Description of service 2.</p>
+        </div>
+        <div class="p-6 bg-white shadow-md rounded">
+          <h3 class="text-xl font-semibold">Service 3</h3>
+          <p class="mt-4 text-gray-600">Description of service 3.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section id="cta" class="py-16 bg-purple-900 text-white text-center">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-4">Ready to Get Started?</h2>
+      <p class="mb-6 text-sm sm:text-base">Join us today and take your business to the next level!</p>
+      <a href="#contact" class="bg-white text-purple-900 font-semibold py-3 px-6 rounded shadow-md hover:bg-gray-100">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-gray-100">
+    <div class="container mx-auto text-center px-4">
+      <h2 class="text-3xl font-bold mb-8">Get in Touch</h2>
+      <form class="max-w-lg mx-auto space-y-4">
+        <input type="text" placeholder="Your Name" class="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <input type="email" placeholder="Your Email" class="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <textarea placeholder="Your Message" rows="5" class="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+        <button type="submit" class="w-full bg-purple-900 text-white py-3 rounded shadow-md hover:bg-purple-900">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-400 py-6">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 My Website. Just for practice on Tailwind CSS.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
